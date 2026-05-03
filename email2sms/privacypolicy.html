@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy – Email2SMS</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f9fafb;
+      color: #1a1a2e;
+      line-height: 1.7;
+    }
+    header {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      color: #fff;
+      padding: 48px 24px 36px;
+      text-align: center;
+    }
+    header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 8px; }
+    header p { color: #94a3b8; font-size: 0.95rem; }
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #1a1a2e;
+      margin: 36px 0 12px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e2e8f0;
+    }
+    p { margin-bottom: 14px; color: #374151; }
+    ul { margin: 10px 0 14px 20px; color: #374151; }
+    ul li { margin-bottom: 6px; }
+    .highlight-box {
+      background: #eff6ff;
+      border-left: 4px solid #3b82f6;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 20px 0;
+    }
+    .highlight-box p { margin: 0; color: #1e40af; }
+    a { color: #3b82f6; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    footer {
+      text-align: center;
+      padding: 24px;
+      color: #94a3b8;
+      font-size: 0.85rem;
+      border-top: 1px solid #e2e8f0;
+    }
+    .effective-date {
+      display: inline-block;
+      background: #f1f5f9;
+      border-radius: 6px;
+      padding: 6px 14px;
+      font-size: 0.85rem;
+      color: #64748b;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Email2SMS — Privacy Policy</h1>
+  <p>Farmer Brothers · com.farmerbrothers.email2sms</p>
+  <span class="effective-date">Effective Date: May 3, 2026</span>
+</header>
+
+<main>
+
+  <p>This Privacy Policy describes how the <strong>Email2SMS</strong> application ("App", "we", "our") collects, uses, and protects information when you use our Android application. By using Email2SMS, you agree to the practices described in this policy.</p>
+
+  <!-- ─── 1. What the App Does ──────────────────────────────────────────── -->
+  <h2>1. What the App Does</h2>
+  <p>Email2SMS is a personal automation tool that:</p>
+  <ul>
+    <li>Monitors your Gmail inbox using the Gmail API (with your explicit authorization)</li>
+    <li>Matches incoming emails against rules you define</li>
+    <li>Sends SMS messages from your device when a matching email is detected</li>
+    <li>Runs as a foreground service to remain active while in the background</li>
+  </ul>
+  <p>The App is designed for personal use on devices you own and control. All processing happens locally on your device or through services you have authorized (Google, Firebase).</p>
+
+  <!-- ─── 2. Permissions Collected & Why ────────────────────────────────── -->
+  <h2>2. Permissions Used and Why</h2>
+
+  <div class="highlight-box">
+    <p><strong>READ_PHONE_STATE</strong> — This permission is used to detect SIM card availability and telephony state before attempting to send SMS messages. We use it solely to verify that a SIM card is present and the device is in a state where SMS can be sent. We do not read, record, or transmit your phone number, IMEI, call logs, or any other telephony data.</p>
+  </div>
+
+  <p>Below is the full list of permissions and their purpose:</p>
+  <ul>
+    <li><strong>SEND_SMS</strong> — To send SMS messages based on matched email rules.</li>
+    <li><strong>READ_SMS / RECEIVE_SMS</strong> — Required by the SMS framework on some Android versions to verify message delivery status.</li>
+    <li><strong>READ_PHONE_STATE</strong> — To check SIM/telephony availability before sending SMS. No personal telephony data is read or transmitted.</li>
+    <li><strong>INTERNET / ACCESS_NETWORK_STATE</strong> — To connect to the Gmail API and Firebase services.</li>
+    <li><strong>FOREGROUND_SERVICE / FOREGROUND_SERVICE_DATA_SYNC</strong> — To keep the email monitoring service alive in the background.</li>
+    <li><strong>POST_NOTIFICATIONS</strong> — To display monitoring status and alert notifications.</li>
+    <li><strong>WAKE_LOCK</strong> — To keep the device awake during email checks to ensure timely SMS delivery.</li>
+    <li><strong>REQUEST_IGNORE_BATTERY_OPTIMIZATIONS</strong> — To request that Android not kill the monitoring service.</li>
+    <li><strong>RECEIVE_BOOT_COMPLETED</strong> — To restart the monitoring service after the device reboots.</li>
+    <li><strong>SCHEDULE_EXACT_ALARM / USE_EXACT_ALARM</strong> — To schedule precise email polling intervals.</li>
+    <li><strong>SYSTEM_ALERT_WINDOW</strong> — Used for foreground service monitoring continuity on certain devices.</li>
+  </ul>
+
+  <!-- ─── 3. Data We Collect ─────────────────────────────────────────────── -->
+  <h2>3. Data We Collect</h2>
+  <p>We collect only the minimum data required for the App to function:</p>
+  <ul>
+    <li><strong>Google Account credentials</strong> — An OAuth 2.0 token issued by Google, used to access the Gmail API on your behalf. We never store your Google password.</li>
+    <li><strong>Email metadata</strong> — Email IDs, subjects, and sender addresses are processed locally to match your rules. Email bodies are not stored beyond the current processing cycle.</li>
+    <li><strong>Email rules</strong> — The rules you define (sender filters, keyword filters, destination phone numbers) are stored locally on your device using encrypted storage.</li>
+    <li><strong>App state</strong> — Monitoring status, last-processed email ID, and error logs are stored locally and encrypted on your device.</li>
+    <li><strong>Device ID</strong> — A randomly generated UUID (not linked to your hardware or phone number) used for coordination when multiple devices are running the App simultaneously.</li>
+  </ul>
+
+  <!-- ─── 4. Data We Do NOT Collect ─────────────────────────────────────── -->
+  <h2>4. Data We Do NOT Collect</h2>
+  <ul>
+    <li>Your actual phone number or IMEI</li>
+    <li>Your contacts or call logs</li>
+    <li>Email body content (beyond in-memory processing)</li>
+    <li>Location data of any kind</li>
+    <li>Biometric or health data</li>
+    <li>Any data sold to or shared with third-party advertisers</li>
+  </ul>
+
+  <!-- ─── 5. Third-Party Services ───────────────────────────────────────── -->
+  <h2>5. Third-Party Services</h2>
+  <p>The App uses the following third-party services, each governed by their own privacy policies:</p>
+  <ul>
+    <li><strong>Google Gmail API</strong> — Used to read your inbox. Access requires your explicit OAuth consent. <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a></li>
+    <li><strong>Google Sign-In</strong> — Used for authentication. <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a></li>
+    <li><strong>Firebase Realtime Database</strong> — Used for coordination when multiple devices run the App simultaneously (to prevent duplicate SMS sends). Only anonymous coordination data (device UUIDs and email claim records) is stored. <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy Policy</a></li>
+    <li><strong>Google Drive (optional)</strong> — If you enable Drive backup, your email rules are backed up to your personal Google Drive. No data is stored on our servers.</li>
+  </ul>
+
+  <!-- ─── 6. Data Storage & Security ───────────────────────────────────── -->
+  <h2>6. Data Storage &amp; Security</h2>
+  <p>All locally stored data (email rules, app state, OAuth tokens) is encrypted using AES-256 encryption via Android's secure storage APIs. Encryption keys are stored in Android's Keystore system and never leave your device.</p>
+  <p>Firebase Realtime Database data is protected by Firebase security rules that restrict access to authenticated users of this App only.</p>
+
+  <!-- ─── 7. Data Sharing ────────────────────────────────────────────────── -->
+  <h2>7. Data Sharing</h2>
+  <p>We do not sell, trade, rent, or otherwise share your personal information with any third parties, except as required by law or as necessary to operate the services listed in Section 5 above.</p>
+
+  <!-- ─── 8. Data Retention ─────────────────────────────────────────────── -->
+  <h2>8. Data Retention</h2>
+  <p>All data is stored locally on your device or in your personal Google account. You can delete all app data at any time by uninstalling the App or using the "Reset App Data" option within the App settings. Firebase coordination records are automatically purged after 24 hours.</p>
+
+  <!-- ─── 9. Children's Privacy ─────────────────────────────────────────── -->
+  <h2>9. Children's Privacy</h2>
+  <p>This App is not directed at children under the age of 13. We do not knowingly collect personal information from children. If you believe a child has provided us with personal information, please contact us so we can delete it.</p>
+
+  <!-- ─── 10. Your Rights ────────────────────────────────────────────────── -->
+  <h2>10. Your Rights</h2>
+  <p>You have the right to:</p>
+  <ul>
+    <li>Revoke Gmail API access at any time via your <a href="https://myaccount.google.com/permissions" target="_blank">Google Account permissions page</a></li>
+    <li>Delete all local app data by uninstalling the App</li>
+    <li>Request deletion of any Firebase coordination data by contacting us</li>
+  </ul>
+
+  <!-- ─── 11. Changes to This Policy ───────────────────────────────────── -->
+  <h2>11. Changes to This Policy</h2>
+  <p>We may update this Privacy Policy from time to time. When we do, we will update the effective date at the top of this page. Continued use of the App after changes constitutes acceptance of the updated policy.</p>
+
+  <!-- ─── 12. Contact ───────────────────────────────────────────────────── -->
+  <h2>12. Contact Us</h2>
+  <p>If you have any questions about this Privacy Policy or how we handle your data, please contact us at:</p>
+  <p><strong>Farmer Brothers</strong><br/>
+  Email: <a href="mailto:privacy@farmerbrothers.com">privacy@farmerbrothers.com</a></p>
+
+</main>
+
+<footer>
+  <p>© 2026 Farmer Brothers · Email2SMS · <a href="mailto:privacy@farmerbrothers.com">privacy@farmerbrothers.com</a></p>
+</footer>
+
+</body>
+</html>
